@@ -1,4 +1,4 @@
-# pig-game
+# PIG Game
 Repository for learning project titled "Pig Game".
 
 Languages used: HTML, CSS, JavaScript
