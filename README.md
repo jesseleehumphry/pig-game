@@ -26,8 +26,8 @@ What's planned
 Game Modes
 #######
 - Odds and evens
- - A game mode where even numbers are worth double, odd numbers are worth half.
+  - A game mode where even numbers are worth double, odd numbers are worth half.
 - d20
- - Uses a 20-sided die instead, wit 1, 5, 10, 15, and 20 being the "losing" rolls.
+  - Uses a 20-sided die instead, wit 1, 5, 10, 15, and 20 being the "losing" rolls.
 - Hotline
- - Uses a 6-sided die, but the limit must be matched EXACTLY in order to win. 
+  - Uses a 6-sided die, but the limit must be matched EXACTLY in order to win. 
