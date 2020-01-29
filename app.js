@@ -35,8 +35,8 @@ document.querySelector('.btn-new').addEventListener('click', function (){
     round = 0;
     document.getElementById('score-0').textContent = '0';
     document.getElementById('score-1').textContent = '0';
-    document.getElementById('current-0').textContent = '0';
-    document.getElementById('current-1').textContent = '0';
+    document.getElementById('pocket-0').textContent = '0';
+    document.getElementById('pocket-1').textContent = '0';
     document.querySelector('.dice').style.display = 'none';
     document.querySelector('.player-'+activePlayer+'-panel').classList.toggle('active');
     activePlayer = 0;
@@ -59,7 +59,7 @@ document.querySelector('.btn-roll').addEventListener('click', function (){
     diceDOM.src = 'img/dice-'+dice+'.png';
 
     // update rounds score if roll > 1
-    var scoreDOM = document.getElementById('current-'+activePlayer);
+    var scoreDOM = document.getElementById('pocket-'+activePlayer);
     if (dice > 1) {
         round+=dice;
         scoreDOM.textContent = round;
@@ -67,23 +67,33 @@ document.querySelector('.btn-roll').addEventListener('click', function (){
         round = 0;
         scoreDOM.textContent = round;
         diceDOM.style.display = 'none';
-        document.querySelector('.player-'+activePlayer+'-panel').classList.toggle('active');
-        activePlayer === 0 ? activePlayer++ : activePlayer--;
-        document.querySelector('.player-'+activePlayer+'-panel').classList.toggle('active');    
+        nextPlayer(); 
     }
 
 });
 
-document.querySelector('.btn-hold').addEventListener('click', function (){
+document.querySelector('.btn-bank').addEventListener('click', function (){
     scores[activePlayer] += round;
     round = 0;
 
+    // UI update
     document.getElementById('score-'+activePlayer).textContent = scores[activePlayer];
-    document.getElementById('current-'+activePlayer).textContent = 0;
+    document.getElementById('pocket-'+activePlayer).textContent = 0;
     document.querySelector('.dice').style.display = 'none';
 
+    //Check for win condition
+    if (scores[activePlayer] >= 100) {
+        document.getElementById('name-'+activePlayer).textContent = 'WINNER!';
+        document.getElementById('name-'+activePlayer).style.color = 'red';
+        document.getElementById('score-'+activePlayer).style.color = 'red';
+    } else {
+        nextPlayer();
+    }
+
+});
+
+function nextPlayer(){
     document.querySelector('.player-'+activePlayer+'-panel').classList.toggle('active');
     activePlayer === 0 ? activePlayer++ : activePlayer--;
     document.querySelector('.player-'+activePlayer+'-panel').classList.toggle('active');
-
-});
+};

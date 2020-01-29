@@ -91,7 +91,7 @@ body {
     right: 10px;
 }
 
-.player-current-box {
+.player-pocket-box {
     background-color: #7851a9;
     color: #fff;
     width: 40%;
@@ -100,14 +100,14 @@ body {
     text-align: center;
 }
 
-.player-current-label {
+.player-pocket-label {
     text-transform: uppercase;
     margin-bottom: 10px;
     font-size: 12px;
-    color: #222;
+    color: #eee;
 }
 
-.player-current-score {
+.player-pocket-score {
     font-size: 30px;
 }
 
@@ -147,7 +147,7 @@ i {
 
 .btn-new { top: 45px;}
 .btn-roll { top: 403px;}
-.btn-hold { top: 467px;}
+.btn-bank { top: 467px;}
 
 .dice {
     display:none;
