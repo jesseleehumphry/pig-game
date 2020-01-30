@@ -33,9 +33,20 @@
             <button class="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button>
             <button class="btn-bank"><i class="ion-log-in"></i>Bank</button>
             
-            <img src="img/dice-5.png" alt="Dice" class="dice">
+            <div class="dice-container-flex">
+                <img src="img/dice-5.png" alt="Dice0" class="dice" id="dice0">
+                <img src="img/dice-5.png" alt="Dice1" class="dice" id="dice1">
+            </div>
+            
+
+            <form class="data-taker">
+                Win limit: 
+                <input type="text" id="score-input" name="score">
+                <input type="button" class="btn-confirm-score" value="Confirm">
+            </form>
+
         </div>
-        
+
         <script src="app.js"></script>
     </body>
 </html>
