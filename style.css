@@ -179,9 +179,21 @@ i {
     transition: margin 0.3s;
 }
 
+/**********************************************
+*** Buttons
+**********************************************/
+
 .btn-new { top: 45px;}
+.btn-new:hover > i { transform: rotateZ(-180deg); transition: all 0.3s ease;}
+.btn-new > i { transition: all 0.3s ease;}
+
 .btn-roll { top: 403px;}
+.btn-roll:hover > i { transform: rotateZ(-180deg); transition: all 0.3s ease;}
+.btn-roll > i { transition: all 0.3s ease;}
+
 .btn-bank { top: 467px;}
+.btn-bank:hover > i { transform: rotateZ(45deg); transition: all 0.3s ease;}
+.btn-bank > i { transition: all 0.3s ease;}
 
 .winner { background-color: #f7f7f7; }
 .winner .player-name { font-weight: 300; color: red; }
