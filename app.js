@@ -41,21 +41,21 @@ document.querySelector('.btn-roll').addEventListener('click', function (){
             for (var i=0;i<2;i++) {
                 var scoreDOM = document.getElementById('pocket-'+activePlayer);
                 if (dice[i] > 1 ) {
-                    round+=dice[i];
-                    scoreDOM.textContent = round;
-                    if (dice[i] == 6 && lastRoll[i] == 6) {
-                        lastRoll[i] = dice[i];
+                    if (dice[i] === 6 && dice[i] === lastRoll[i]) {
                         scores[activePlayer] = 0;
                         nextPlayer();
+                        break;
                     } else {
+                        round+=dice[i];
                         lastRoll[i] = dice[i];
+                        scoreDOM.textContent = round;
                     }
+
                 console.log('last roll was: '+lastRoll[i]);
-               }
+               } 
             }
-        } 
-        // update rounds score if roll > 1
-        else {
+
+        } else {
                 nextPlayer(); 
             }
         
@@ -146,22 +146,37 @@ function init() {
 }
 
 document.querySelector('.btn-confirm-score').addEventListener('click', function (){
-    var inputDOM = document.getElementById('score-input').value
+    var inputDOM = document.getElementById('score-input')
     
-    if (isNaN(inputDOM) || inputDOM < 2) {
+    if (isNaN(inputDOM.value) || inputDOM.value < 2) {
         alert('The score input must be a number greater than 1.')
     } else {
         var c = confirm('Setting a score will start a new game. Are you sure you want to do this?');
         if (c = true) {
-            if (topScore === inputDOM) {
+            if (topScore === inputDOM.value) {
                 alert('The score you input is already the winning score. The game won\'t be restarted.');
             } else {
-                topScore = inputDOM;
+                topScore = inputDOM.value;
+                inputDOM.value = '';
                 init();
             }
         }
 
     }
+});
+
+document.querySelector('.btn-rules').addEventListener('click', function (){
+    var rulesDOM = document.querySelector('.rules');
+
+    rulesDOM.style.display = 'flex';
+    document.querySelector('.btn-rules').style.display = 'none';
+});
+
+document.querySelector('.rules .btn-close').addEventListener('click', function (){
+    var rulesDOM = document.querySelector('.rules');
+
+    rulesDOM.style.display = 'none';
+    document.querySelector('.btn-rules').style.display = 'block';
 });
 
 // Check for variable definition, return 'false' if undefined.
