@@ -32,6 +32,7 @@
             <button class="btn-new"><i class="ion-ios-plus-outline"></i>New game</button>
             <button class="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button>
             <button class="btn-bank"><i class="ion-log-in"></i>Bank</button>
+            <button class="btn-rules"><i class="ion-ios-book"></i>Rules</button>
             
             <div class="dice-container-flex">
                 <img src="img/dice-5.png" alt="Dice0" class="dice" id="dice0">
@@ -44,6 +45,32 @@
                 <input type="text" id="score-input" name="score">
                 <input type="button" class="btn-confirm-score" value="Confirm">
             </form>
+
+            <div class="rules" id="rules-standard">
+                <button class="btn-close"><i class="ion-ios-close-outline"></i>CLOSE</button>
+                <h1>RULES</h1>
+                <h2>STANDARD GAME</h2>
+                <hr>
+                    <ul>
+                        <li>Players take turns rolling dice.</li>
+                        <li>If a player rolls a 1 on either die:
+                            <ul>
+                                <li>The player loses their pocket</li>
+                                <li>It's the next player's turn</li>
+                            </ul> 
+                        </li>
+                        <li>If the player rolls and the same die rolls a 6 twice in a row:
+                            <ul>
+                                <li>The player loses their pocket & bank</li>
+                                <li>It's the next player's turn</li>
+                            </ul></li>
+                    </ul>
+                </ul>
+                <h1>WIN CONDITION</h1>
+                <h2>STANDARD GAME</h2>
+                    <p>Players can win if their bank exceeds the win score.</p>
+
+            </div>
 
         </div>
 
