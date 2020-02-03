@@ -44,7 +44,6 @@ document.querySelector('.btn-roll').addEventListener('click', function (){
                     if (dice[i] === 6 && dice[i] === lastRoll[i]) {
                         scores[activePlayer] = 0;
                         nextPlayer();
-                        break;
                     } else {
                         round+=dice[i];
                         lastRoll[i] = dice[i];
@@ -70,6 +69,10 @@ document.querySelector('.btn-roll').addEventListener('click', function (){
 
 document.querySelector('.btn-bank').addEventListener('click', function (){
     if (gamePlaying) {
+        console.log("Active Player: " + activePlayer);
+        console.log("Score: " + scores[activePlayer]);
+        console.log("Round: " + round);
+        console.log("Roll: " + lastRoll);
         scores[activePlayer] += round;
     
         // UI update
